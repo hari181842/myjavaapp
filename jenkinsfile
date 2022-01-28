@@ -1,6 +1,6 @@
 pipeline {
   parameters {
-  choice choices: ['dev', 'stg', 'master'], description: 'Please select your branch', name: 'Branch'
+  choice choices: ['dev', 'stg', 'master','pipeline'], description: 'Please select your branch', name: 'Branch'
 }
     agent any
      environment {
@@ -25,7 +25,7 @@ pipeline {
 		],
 		userRemoteConfigs: [
 		[
-		credentialsId: 'Github', url: 'https://github.com/Bhanukiran213/hello-world-war.git']
+		credentialsId: 'Github', url: 'https://github.com/hari181842/myjavaapp.git']
 		]
 		]
 		)
@@ -51,10 +51,10 @@ pipeline {
  ], 
  credentialsId: 'Nexus-cred',
  groupId: 'com.efsavage',
- nexusUrl: '52.66.237.71:8081', 
+ nexusUrl: '3.109.229.170:8081', 
  nexusVersion: 'nexus3', 
  protocol: 'http', 
- repository: 'myrepo', 
+ repository: 'my-repo', 
  version: "${mavenPom.version}" 
      }
    }
